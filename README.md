@@ -8,3 +8,7 @@ Spring MVC Web, Hibernate Validator, BootStrap, and JSP
 A simple flight enquiry form with multiple input fields - text, dropdown, checkbox, and radiobuttons.
 Implemented hibernate validator API to validate empty text fields.
 Added a custom validator annotation to check flight code value entered by user (must start with a value from a list of codes).
+
+# Additions
+Added one more form for flight reservation.
+Added two more custom validation annotations.

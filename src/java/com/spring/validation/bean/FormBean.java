@@ -32,6 +32,7 @@ public class FormBean {
     @FlightCode(value = {"ANZ","AI","BA"},message = "* Flight Code must start with ANZ/AI/BA")
     private String flightCode;
     
+    
     public FormBean() {
         
         countryOptions = new LinkedHashMap<>();

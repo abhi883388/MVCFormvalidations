@@ -1,4 +1,4 @@
-        
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>        
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 

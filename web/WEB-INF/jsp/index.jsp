@@ -6,7 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome to Spring Web MVC project</title>
-        <jsp:include page="include.jsp"></jsp:include>
+        <jsp:include page="include.jsp"/>
     </head>
 
     <body>
@@ -18,10 +18,10 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="showForm">Flight Enquiry</a>
+        <a class="nav-link" href="home/showForm">Flight Enquiry</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="home/flightBooking">Flight Booking</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>

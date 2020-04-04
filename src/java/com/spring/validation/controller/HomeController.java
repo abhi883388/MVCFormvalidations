@@ -2,6 +2,7 @@
 package com.spring.validation.controller;
 
 import com.spring.validation.bean.FormBean;
+import com.spring.validation.form.FlightBookingForm;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import javax.validation.Valid;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -48,7 +50,35 @@ public class HomeController {
         }
          return model;
     }
+    
+    
+    //To display flight booking form
+    
+    @RequestMapping(value="/flightBooking", method=RequestMethod.GET)
+    public ModelAndView showBookingPage(){
+        
+        ModelAndView model = new ModelAndView("flightBooking");
+        model.addObject("flightBean",new FlightBookingForm());
+        model.addObject("status","initial");
+        return model;
+    }
 
-   
+    @RequestMapping(value="/flightBooking", method=RequestMethod.POST)
+    public ModelAndView saveFlightDetails(@Valid @ModelAttribute ("flightBean") FlightBookingForm flightBean, 
+            BindingResult bindingResult){
+        
+        ModelAndView model = new ModelAndView("flightBooking");
+        if(bindingResult.hasErrors()){
+            model.addObject("status","initial");
+            model.addObject("flightBean",flightBean);
+        }
+        else{
+            model.addObject("status","final");
+            model.addObject("flightBean",flightBean);
+        }
+        
+        
+        return model;
+    }
     
 }
